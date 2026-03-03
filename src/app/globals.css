@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+:root {
+  --berry: #3A2A4D;
+  --berry-fade: #5A3D6E;
+  --berry-dim: #47345E;
+  --berry-saturated: #2B1C3D;
+  --berry-desaturated: #886C9C;
+  
+  --lilac: #C7B8E0;
+  --bubblegum: #D678B5;
+  --gold: #E3C0A8;
+  --mint: #7FC9AB;
+  --violet: #C78DFC;
+  
+  --bright-red: #E08CC3;
+  --bright-green: #96D6BC;
+  --bright-yellow: #EDCFB8;
+  --bright-blue: #D4A3FD;
+  --bright-magenta: #E08CC3;
+  --bright-cyan: #96D6BC;
+  --bright-white: #DDD0EE;
+  
+  --bg: var(--berry);
+  --surface: var(--berry-saturated);
+  --fg: var(--lilac);
+  --fg-muted: var(--berry-desaturated);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+
+.font-mono {
+  font-family: var(--font-jetbrains), monospace;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(199, 141, 252, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(199, 141, 252, 0.5);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-1 { animation-delay: 0.1s; }
+.animate-fade-in-delay-2 { animation-delay: 0.2s; }
+.animate-fade-in-delay-3 { animation-delay: 0.3s; }
+.animate-fade-in-delay-4 { animation-delay: 0.4s; }
+.animate-fade-in-delay-5 { animation-delay: 0.5s; }
+
+.glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.color-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.toast {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--berry-dim);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--berry-desaturated);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--violet);
+}
